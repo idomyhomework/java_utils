@@ -127,4 +127,36 @@ public class Burbuja {
             }
         }
     }
+
+    public static void bidireccional(int arr[]) {
+        int izq = 0;
+        int der = arr.length - 1;
+        boolean hayCambios = true;
+
+        int temp = 0;
+        while (izq < der && hayCambios) {
+            hayCambios = false;
+            for (int i = izq; i < der - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    hayCambios = true;
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+            }
+            if (!hayCambios) {
+                break;
+            }
+            for (int i = der; i > izq; i--) {
+                if (arr[i] < arr[i - 1]) {
+                    hayCambios = true;
+                    temp = arr[i];
+                    arr[i] = arr[i - 1];
+                    arr[i - 1] = temp;
+                }
+            }
+            izq++;
+            der--;
+        }
+    }
 }

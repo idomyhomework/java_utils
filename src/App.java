@@ -2,13 +2,12 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
-        Burbuja brujPalabras = new Burbuja(100, 10);
+        int[] arr = { 45, 34, 55, 66, 67, 90, 1, -34, 0, 123 };
 
-        System.out.println(brujPalabras.toStringWords());
+        Insertion.sort(arr);
 
-        System.out.println("*** Ordenado ***");
-        brujPalabras.ordenarPalabras();
-        System.out.println(brujPalabras.toStringWords());
-
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        }
     }
 }
