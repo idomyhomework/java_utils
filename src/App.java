@@ -4,7 +4,7 @@ public class App {
 
         int[] arr = { 45, 34, 55, 66, 67, 90, 1, -34, 0, 123 };
 
-        Insertion.sort(arr);
+        Quicksort.sort(arr, 0, arr.length - 1);
 
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + ", ");

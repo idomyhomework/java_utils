@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Burbuja {
 
-    public void sort(int[] datos) {
+    public static void sort(int[] datos) {
         for (int i = 1; i < datos.length - 1; i++) {
             for (int j = 0; j < datos.length - i; j++) {
                 if (datos[j] > datos[j + 1]) {
@@ -14,7 +14,7 @@ public class Burbuja {
         }
     }
 
-    public void improvedSort(int[] datos) {
+    public static void improvedSort(int[] datos) {
         int i = 0;
         boolean esOrdenado = false;
 
