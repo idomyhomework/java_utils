@@ -1,5 +1,5 @@
 public class Selection {
-    public static void algoSeleccion(int[] arr) {
+    public static void sort(int[] arr) {
         int minimo = 0;
         int aux = 0;
 

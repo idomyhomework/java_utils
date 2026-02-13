@@ -1,13 +1,41 @@
+import java.time.Duration;
+import java.time.LocalTime;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        // crear un array de elementos int random
+        int[] originalArray = GeneradorRandom.randomIntArray(0, 100, 100000);
 
-        int[] arr = { 45, 34, 55, 66, 67, 90, 1, -34, 0, 123, 78, -1, -30, -1024, 569 };
+        // algoritmo burbuja
+        int[] sortBurbuja = originalArray.clone();
+        LocalTime startBurbuja = LocalTime.now();
+        Burbuja.sort(sortBurbuja);
+        LocalTime finishBurbuja = LocalTime.now();
+        System.out.print("Burbuja ejecutado en...");
+        System.out.println((double) Duration.between(startBurbuja, finishBurbuja).toMillis() / 1000 + " segundos");
 
-        Quicksort.sort(arr, 0, arr.length - 1);
+        // algoritmo insertion
+        int[] sortInsertion = originalArray.clone();
+        LocalTime startInsertion = LocalTime.now();
+        Insertion.sort(sortInsertion);
+        LocalTime finishInsertion = LocalTime.now();
+        System.out.print("Insertion ejecutado en...");
+        System.out.println((double) Duration.between(startInsertion, finishInsertion).toMillis() / 1000 + " segundos");
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + ", ");
-        }
+        // algoritmo quicksort
+        int[] quickSort = originalArray.clone();
+        LocalTime startQuick = LocalTime.now();
+        Quicksort.sort(quickSort);
+        LocalTime finishQuick = LocalTime.now();
+        System.out.print("Quicksort ejecutado en...");
+        System.out.println((double) Duration.between(startQuick, finishQuick).toMillis() / 1000 + " segundos");
+
+        // algoritmo seleccion
+        int[] selectionSort = originalArray.clone();
+        LocalTime startSelection = LocalTime.now();
+        Selection.sort(selectionSort);
+        LocalTime finishSelection = LocalTime.now();
+        System.out.print("Selection ejecutado en...");
+        System.out.println((double) Duration.between(startSelection, finishSelection).toMillis() / 1000 + " segundos");
     }
 }
